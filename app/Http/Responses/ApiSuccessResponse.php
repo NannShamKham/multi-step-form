@@ -14,13 +14,13 @@ class ApiSuccessResponse implements Responsable
         protected string $message = '',
         protected int $status = HttpResponse::HTTP_OK,
         protected array $headers = [],
-    )
-    {
-
+    ) {
+//        $this->message = str($message)->isEmpty() ? __('messages.success') : $message;
     }
 
     public function toResponse($request)
     {
+        // TODO: Implement toResponse() method.
         return response()->json(
             data: [
                 'data' => $this->data,
@@ -32,6 +32,3 @@ class ApiSuccessResponse implements Responsable
         );
     }
 }
-
-
-

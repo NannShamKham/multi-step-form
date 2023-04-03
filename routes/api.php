@@ -21,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/register',[AuthController::class,'register'])->name('auth:register:post');
 Route::post('/login',[AuthController::class,'login'])->name('auth:login:post');
+Route::middleware('auth:sanctum')->group(function (){
+    Route::delete('/logout',[AuthController::class,'logout'])->name('auth:logout:delete');
+});
